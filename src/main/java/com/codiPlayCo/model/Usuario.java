@@ -11,12 +11,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table (name="usuarios")
-public class Usuario {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "usuarios")
+public class usuario {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private String apellido;
@@ -26,14 +25,13 @@ public class Usuario {
 	private Date fecharegistro;
 	private Date ultimoAcceso;
 	private Boolean activo;
-	private String	avatar;
-	
+	private String avatar;
 
-	public Usuario() {
-	
+	public usuario() {
+
 	}
 
-	public Usuario(Integer id, String nombre, String apellido, String email, String password, Date fechaNacimiento,
+	public usuario(Integer id, String nombre, String apellido, String email, String password, Date fechaNacimiento,
 			Date fecharegistro, Date ultimoAcceso, Boolean activo, String avatar) {
 		super();
 		this.id = id;
@@ -48,29 +46,29 @@ public class Usuario {
 		this.avatar = avatar;
 	}
 
-	//relaciones basedatos
-	
-@OneToMany(mappedBy = "usuario")
-private List<relacion> relaciones;
+	// relaciones basedatos
 
-@OneToMany(mappedBy = "usuario")
-private List<progresoEjercicio> progresoEjercicios;
+	@OneToMany(mappedBy = "usuario")
+	private List<relacion> relaciones;
 
-@OneToMany(mappedBy = "usuario")
-private List<miembrosGrupo> miembroGrupos;	
+	@OneToMany(mappedBy = "usuario")
+	private List<progresoEjercicio> progresoEjercicios;
 
-@OneToMany(mappedBy = "usuario")
-private List<estudiante> estudiantes;
+	@OneToMany(mappedBy = "usuario")
+	private List<miembrosGrupo> miembroGrupos;
 
-@OneToMany(mappedBy = "usuario")
-private List<docente> docentes;	
+	@OneToMany(mappedBy = "usuario")
+	private List<estudiante> estudiantes;
 
-@ManyToOne	
-private List<rol> roles;
+	@OneToMany(mappedBy = "usuario")
+	private List<docente> docentes;
 
-@OneToMany(mappedBy = "usuario")
-private List<procesoLeccion> procesoLecciones;
-	
+	@ManyToOne
+	private rol rol;
+
+	@OneToMany(mappedBy = "usuario")
+	private List<procesoLeccion> procesoLecciones;
+
 	public Integer getId() {
 		return id;
 	}
@@ -157,8 +155,5 @@ private List<procesoLeccion> procesoLecciones;
 				+ ", password=" + password + ", fechaNacimiento=" + fechaNacimiento + ", fecharegistro=" + fecharegistro
 				+ ", ultimoAcceso=" + ultimoAcceso + ", activo=" + activo + ", avatar=" + avatar + "]";
 	}
-	
-	
-	
-	
+
 }

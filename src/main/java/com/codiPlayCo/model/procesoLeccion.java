@@ -24,7 +24,7 @@ public class procesoLeccion {
 	
 	
 	@ManyToOne
-	private Usuario usuario;
+	private usuario usuario;
 	
 	@ManyToOne
 	private leccion Leccion;
@@ -34,7 +34,7 @@ public class procesoLeccion {
 	}
 
 	public procesoLeccion(Integer id, Integer completado, Date fechaInicio, Date fechaCompletada, Integer puntuacion,
-			Integer intentos, Usuario usuario, leccion leccion) {
+			Integer intentos, usuario usuario, leccion leccion) {
 		super();
 		this.id = id;
 		Completado = completado;
@@ -94,11 +94,11 @@ public class procesoLeccion {
 		this.intentos = intentos;
 	}
 
-	public Usuario getUsuario() {
+	public usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(usuario usuario) {
 		this.usuario = usuario;
 	}
 

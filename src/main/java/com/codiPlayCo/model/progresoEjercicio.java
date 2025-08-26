@@ -22,7 +22,7 @@ public class progresoEjercicio {
 	private Date tiempoTardado;
 	
 	@ManyToOne
-	private Usuario usuario;
+	private usuario usuario;
 	
 	@ManyToOne
 	private ejercicio Ejercicio;
@@ -32,7 +32,7 @@ public class progresoEjercicio {
 	}
 
 	public progresoEjercicio(Integer id, Integer completada, Integer estadoEjercicios, Date fechaIntento,
-			Integer puntuacion, Date tiempoTardado, Usuario usuario, ejercicio ejercicio) {
+			Integer puntuacion, Date tiempoTardado, usuario usuario, ejercicio ejercicio) {
 		super();
 		this.id = id;
 		this.completada = completada;
@@ -92,11 +92,11 @@ public class progresoEjercicio {
 		this.tiempoTardado = tiempoTardado;
 	}
 
-	public Usuario getUsuario() {
+	public usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(usuario usuario) {
 		this.usuario = usuario;
 	}
 

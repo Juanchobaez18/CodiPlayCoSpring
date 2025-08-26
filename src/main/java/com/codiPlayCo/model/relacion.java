@@ -21,13 +21,13 @@ public class relacion {
 	private Date fechaRelacion;
 	
 	@ManyToOne
-	private Usuario usuario;
+	private usuario usuario;
 
 	public relacion() {
 	
 	}
 
-	public relacion(Integer id, Integer idCliente, Date fechaRelacion, Usuario usuario) {
+	public relacion(Integer id, Integer idCliente, Date fechaRelacion, usuario usuario) {
 		super();
 		this.id = id;
 		this.idCliente = idCliente;
@@ -59,11 +59,11 @@ public class relacion {
 		this.fechaRelacion = fechaRelacion;
 	}
 
-	public Usuario getUsuario() {
+	public usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(usuario usuario) {
 		this.usuario = usuario;
 	}
 

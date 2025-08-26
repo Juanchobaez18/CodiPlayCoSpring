@@ -1,6 +1,7 @@
 package com.codiPlayCo.model;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "grupoClases")
 public class grupoClase {
@@ -19,12 +21,15 @@ public class grupoClase {
 	private String descripcion;
 	private Date fechaCreacion;
 	private Integer codigoAcceso;
-	
-	@OneToMany
-	private String docente;
+
+	@OneToMany(mappedBy = "grupoClase")
+	private List<docente> docente;
+
+	@OneToMany(mappedBy = "grupoClase")
+	private List<estudiante> estudiante;
 
 	public grupoClase() {
-	 
+
 	}
 
 	public grupoClase(Integer id, String nombre, String descripcion, Date fechaCreacion, Integer codigoAcceso,
@@ -35,7 +40,7 @@ public class grupoClase {
 		this.descripcion = descripcion;
 		this.fechaCreacion = fechaCreacion;
 		this.codigoAcceso = codigoAcceso;
-		this.docente = docente;
+
 	}
 
 	public Integer getId() {
@@ -78,20 +83,10 @@ public class grupoClase {
 		this.codigoAcceso = codigoAcceso;
 	}
 
-	public String getDocente() {
-		return docente;
-	}
-
-	public void setDocente(String docente) {
-		this.docente = docente;
-	}
-
 	@Override
 	public String toString() {
 		return "grupoClase [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", fechaCreacion="
 				+ fechaCreacion + ", codigoAcceso=" + codigoAcceso + "]";
 	}
-	
-	
-	
+
 }

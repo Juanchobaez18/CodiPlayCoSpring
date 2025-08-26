@@ -22,13 +22,13 @@ public class miembrosGrupo {
 	private grupoClase grupoclase;
 	
 	@ManyToOne
-	private Usuario usuario;
+	private usuario usuario;
 
 	public miembrosGrupo() {
 	
 	}
 
-	public miembrosGrupo(Integer id, Date fechaUnion, grupoClase grupoclase, Usuario usuario) {
+	public miembrosGrupo(Integer id, Date fechaUnion, grupoClase grupoclase, usuario usuario) {
 		super();
 		this.id = id;
 		this.fechaUnion = fechaUnion;
@@ -60,11 +60,11 @@ public class miembrosGrupo {
 		this.grupoclase = grupoclase;
 	}
 
-	public Usuario getUsuario() {
+	public usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(usuario usuario) {
 		this.usuario = usuario;
 	}
 
