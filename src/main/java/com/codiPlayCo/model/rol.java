@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "roles")
-public class rol {
+public class Rol {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +20,13 @@ public class rol {
 	private String descripcion;
 
 	@OneToMany(mappedBy = "rol")
-	private List<usuario> usuario;
+	private List<Usuario> Usuario;
 
-	public rol() {
+	public Rol() {
 
 	}
 
-	public rol(Integer id, String nombre, String descripcion) {
+	public Rol(Integer id, String nombre, String descripcion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
-public class usuario {
+public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -27,11 +27,11 @@ public class usuario {
 	private Boolean activo;
 	private String avatar;
 
-	public usuario() {
+	public Usuario() {
 
 	}
 
-	public usuario(Integer id, String nombre, String apellido, String email, String password, Date fechaNacimiento,
+	public Usuario(Integer id, String nombre, String apellido, String email, String password, Date fechaNacimiento,
 			Date fecharegistro, Date ultimoAcceso, Boolean activo, String avatar) {
 		super();
 		this.id = id;
@@ -49,25 +49,25 @@ public class usuario {
 	// relaciones basedatos
 
 	@OneToMany(mappedBy = "usuario")
-	private List<relacion> relaciones;
+	private List<Relacion> relaciones;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<progresoEjercicio> progresoEjercicios;
+	private List<ProgresoEjercicio> ProgresoEjercicios;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<miembrosGrupo> miembroGrupos;
+	private List<MiembrosGrupo> miembroGrupos;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<estudiante> estudiantes;
+	private List<Estudiante> Estudiantes;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<docente> docentes;
+	private List<Docente> Docentes;
 
 	@ManyToOne
-	private rol rol;
+	private Rol Rol;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<procesoLeccion> procesoLecciones;
+	private List<ProcesoLeccion> procesoLecciones;
 
 	public Integer getId() {
 		return id;

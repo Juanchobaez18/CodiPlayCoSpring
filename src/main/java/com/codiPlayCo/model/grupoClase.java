@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "grupoClases")
-public class grupoClase {
+public class GrupoClase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,16 +23,16 @@ public class grupoClase {
 	private Integer codigoAcceso;
 
 	@OneToMany(mappedBy = "grupoClase")
-	private List<docente> docente;
+	private List<Docente> Docente;
 
 	@OneToMany(mappedBy = "grupoClase")
-	private List<estudiante> estudiante;
+	private List<Estudiante> Estudiante;
 
-	public grupoClase() {
+	public GrupoClase() {
 
 	}
 
-	public grupoClase(Integer id, String nombre, String descripcion, Date fechaCreacion, Integer codigoAcceso,
+	public GrupoClase(Integer id, String nombre, String descripcion, Date fechaCreacion, Integer codigoAcceso,
 			String docente) {
 		super();
 		this.id = id;

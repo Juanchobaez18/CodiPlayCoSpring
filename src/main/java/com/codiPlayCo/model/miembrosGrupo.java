@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "miembrosGrupos")
-public class miembrosGrupo {
+public class MiembrosGrupo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,21 +19,21 @@ public class miembrosGrupo {
 	
 	
 	@ManyToOne
-	private grupoClase grupoclase;
+	private GrupoClase grupoclase;
 	
 	@ManyToOne
-	private usuario usuario;
+	private Usuario Usuario;
 
-	public miembrosGrupo() {
+	public MiembrosGrupo() {
 	
 	}
 
-	public miembrosGrupo(Integer id, Date fechaUnion, grupoClase grupoclase, usuario usuario) {
+	public MiembrosGrupo(Integer id, Date fechaUnion, GrupoClase grupoclase, Usuario Usuario) {
 		super();
 		this.id = id;
 		this.fechaUnion = fechaUnion;
 		this.grupoclase = grupoclase;
-		this.usuario = usuario;
+		this.Usuario = Usuario;
 	}
 
 	public Integer getId() {
@@ -52,20 +52,20 @@ public class miembrosGrupo {
 		this.fechaUnion = fechaUnion;
 	}
 
-	public grupoClase getGrupoclase() {
+	public GrupoClase getGrupoclase() {
 		return grupoclase;
 	}
 
-	public void setGrupoclase(grupoClase grupoclase) {
+	public void setGrupoclase(GrupoClase grupoclase) {
 		this.grupoclase = grupoclase;
 	}
 
-	public usuario getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
 	@Override

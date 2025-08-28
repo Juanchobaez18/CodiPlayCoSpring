@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "finCursos")
-public class finCurso {
+public class FinCurso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,13 +22,13 @@ public class finCurso {
 	private String finCurso;
 	
 	@ManyToOne
-	private curso Curso;
+	private Curso Curso;
 
-	public finCurso() {
+	public FinCurso() {
 	
 	}
 
-	public finCurso(Integer id, Date fechaFin, Date tiempoRealizacion, String notaFinal, String finCurso, curso curso) {
+	public FinCurso(Integer id, Date fechaFin, Date tiempoRealizacion, String notaFinal, String finCurso, Curso curso) {
 		super();
 		this.id = id;
 		this.fechaFin = fechaFin;
@@ -78,11 +78,11 @@ public class finCurso {
 		this.finCurso = finCurso;
 	}
 
-	public curso getCurso() {
+	public Curso getCurso() {
 		return Curso;
 	}
 
-	public void setCurso(curso curso) {
+	public void setCurso(Curso curso) {
 		Curso = curso;
 	}
 

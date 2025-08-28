@@ -11,24 +11,24 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "estudiantes")
-public class estudiante {
+public class Estudiante {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@ManyToOne
-	private usuario usuario;
+	private Usuario Usuario;
 	@ManyToOne
-	private grupoClase grupoClase;
+	private GrupoClase GrupoClase;
 
-	public estudiante() {
+	public Estudiante() {
 
 	}
 
-	public estudiante(Integer id, usuario usuario, List<com.codiPlayCo.model.grupoClase> grupoClase) {
+	public Estudiante(Integer id, Usuario Usuario, List<com.codiPlayCo.model.GrupoClase> GrupoClase) {
 		super();
 		this.id = id;
-		this.usuario = usuario;
+		this.Usuario = Usuario;
 	}
 
 	public Integer getId() {
@@ -39,12 +39,12 @@ public class estudiante {
 		this.id = id;
 	}
 
-	public usuario getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
 	@Override

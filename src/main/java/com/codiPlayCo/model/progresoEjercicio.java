@@ -8,9 +8,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "progesoEjercicios")
-public class progresoEjercicio {
+public class ProgresoEjercicio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,19 +21,20 @@ public class progresoEjercicio {
 	private Date fechaIntento;
 	private Integer puntuacion;
 	private Date tiempoTardado;
-	
-	@ManyToOne
-	private usuario usuario;
-	
-	@ManyToOne
-	private ejercicio Ejercicio;
 
-	public progresoEjercicio() {
-	
+	@ManyToOne
+	private Usuario Usuario;
+
+	@ManyToOne
+	private Ejercicio Ejercicio;
+
+	public ProgresoEjercicio() {
+
 	}
 
-	public progresoEjercicio(Integer id, Integer completada, Integer estadoEjercicios, Date fechaIntento,
-			Integer puntuacion, Date tiempoTardado, usuario usuario, ejercicio ejercicio) {
+	public ProgresoEjercicio(Integer id, Integer completada, Integer estadoEjercicios, Date fechaIntento,
+			Integer puntuacion, Date tiempoTardado, com.codiPlayCo.model.Usuario usuario,
+			com.codiPlayCo.model.Ejercicio ejercicio) {
 		super();
 		this.id = id;
 		this.completada = completada;
@@ -40,7 +42,7 @@ public class progresoEjercicio {
 		this.fechaIntento = fechaIntento;
 		this.puntuacion = puntuacion;
 		this.tiempoTardado = tiempoTardado;
-		this.usuario = usuario;
+		Usuario = usuario;
 		Ejercicio = ejercicio;
 	}
 
@@ -92,19 +94,19 @@ public class progresoEjercicio {
 		this.tiempoTardado = tiempoTardado;
 	}
 
-	public usuario getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
-	public ejercicio getEjercicio() {
+	public Ejercicio getEjercicio() {
 		return Ejercicio;
 	}
 
-	public void setEjercicio(ejercicio ejercicio) {
+	public void setEjercicio(Ejercicio ejercicio) {
 		Ejercicio = ejercicio;
 	}
 
@@ -114,5 +116,5 @@ public class progresoEjercicio {
 				+ ", fechaIntento=" + fechaIntento + ", puntuacion=" + puntuacion + ", tiempoTardado=" + tiempoTardado
 				+ "]";
 	}
-	
+
 }
