@@ -8,11 +8,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-@Entity
-@Table(name ="procesoLecciones")
-public class procesoLeccion {
 
-	
+@Entity
+@Table(name = "procesoLecciones")
+public class ProcesoLeccion {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,20 +21,19 @@ public class procesoLeccion {
 	private Date fechaCompletada;
 	private Integer puntuacion;
 	private Integer intentos;
-	
-	
-	@ManyToOne
-	private usuario usuario;
-	
-	@ManyToOne
-	private leccion Leccion;
 
-	public procesoLeccion() {
-	
+	@ManyToOne
+	private Usuario Usuario;
+
+	@ManyToOne
+	private Leccion Leccion;
+
+	public ProcesoLeccion() {
+
 	}
 
-	public procesoLeccion(Integer id, Integer completado, Date fechaInicio, Date fechaCompletada, Integer puntuacion,
-			Integer intentos, usuario usuario, leccion leccion) {
+	public ProcesoLeccion(Integer id, Integer completado, Date fechaInicio, Date fechaCompletada, Integer puntuacion,
+			Integer intentos, com.codiPlayCo.model.Usuario usuario, com.codiPlayCo.model.Leccion leccion) {
 		super();
 		this.id = id;
 		Completado = completado;
@@ -42,7 +41,7 @@ public class procesoLeccion {
 		this.fechaCompletada = fechaCompletada;
 		this.puntuacion = puntuacion;
 		this.intentos = intentos;
-		this.usuario = usuario;
+		Usuario = usuario;
 		Leccion = leccion;
 	}
 
@@ -94,19 +93,19 @@ public class procesoLeccion {
 		this.intentos = intentos;
 	}
 
-	public usuario getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
-	public leccion getLeccion() {
+	public Leccion getLeccion() {
 		return Leccion;
 	}
 
-	public void setLeccion(leccion leccion) {
+	public void setLeccion(Leccion leccion) {
 		Leccion = leccion;
 	}
 
@@ -116,5 +115,5 @@ public class procesoLeccion {
 				+ ", fechaCompletada=" + fechaCompletada + ", puntuacion=" + puntuacion + ", intentos=" + intentos
 				+ "]";
 	}
-	
+
 }

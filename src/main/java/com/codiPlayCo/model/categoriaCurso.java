@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="categoriaCursos")
-public class categoriaCurso {
+public class CategoriaCurso {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -19,13 +19,13 @@ public class categoriaCurso {
 	private String icono;
 	
 	@ManyToOne
-	private curso Curso;
+	private Curso Curso;
 
-	public categoriaCurso() {
+	public CategoriaCurso() {
 	
 	}
 
-	public categoriaCurso(Integer id, String nombre, String descripcion, String icono, curso curso) {
+	public CategoriaCurso(Integer id, String nombre, String descripcion, String icono, Curso curso) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -66,11 +66,11 @@ public class categoriaCurso {
 		this.icono = icono;
 	}
 
-	public curso getCurso() {
+	public Curso getCurso() {
 		return Curso;
 	}
 
-	public void setCurso(curso curso) {
+	public void setCurso(Curso curso) {
 		Curso = curso;
 	}
 

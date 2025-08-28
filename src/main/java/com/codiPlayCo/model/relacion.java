@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="relaciones")
-public class relacion {
+public class Relacion {
 
 	
 	@Id
@@ -21,18 +21,18 @@ public class relacion {
 	private Date fechaRelacion;
 	
 	@ManyToOne
-	private usuario usuario;
+	private Usuario Usuario;
 
-	public relacion() {
+	public Relacion() {
 	
 	}
 
-	public relacion(Integer id, Integer idCliente, Date fechaRelacion, usuario usuario) {
+	public Relacion(Integer id, Integer idCliente, Date fechaRelacion, Usuario Usuario) {
 		super();
 		this.id = id;
 		this.idCliente = idCliente;
 		this.fechaRelacion = fechaRelacion;
-		this.usuario = usuario;
+		this.Usuario = Usuario;
 	}
 
 	public Integer getId() {
@@ -59,12 +59,12 @@ public class relacion {
 		this.fechaRelacion = fechaRelacion;
 	}
 
-	public usuario getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
 	@Override

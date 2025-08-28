@@ -8,8 +8,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "ejercicios")
-public class ejercicio {
+@Table(name = "ejercicios")
+public class Ejercicio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,19 +19,19 @@ public class ejercicio {
 	private String solucion;
 	private String dificultad;
 	private String tiempoEstimado;
-	
-	@ManyToOne
-	private docente Docente;
-	
-	@ManyToOne
-	private leccion leccion;
 
-	public ejercicio() {
-	
+	@ManyToOne
+	private Docente Docente;
+
+	@ManyToOne
+	private Leccion Leccion;
+
+	public Ejercicio() {
+
 	}
 
-	public ejercicio(Integer id, String tipo, String anunciado, String solucion, String dificultad,
-			String tiempoEstimado, docente docente, com.codiPlayCo.model.leccion leccion) {
+	public Ejercicio(Integer id, String tipo, String anunciado, String solucion, String dificultad,
+			String tiempoEstimado, com.codiPlayCo.model.Docente docente, com.codiPlayCo.model.Leccion leccion) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -40,7 +40,7 @@ public class ejercicio {
 		this.dificultad = dificultad;
 		this.tiempoEstimado = tiempoEstimado;
 		Docente = docente;
-		this.leccion = leccion;
+		Leccion = leccion;
 	}
 
 	public Integer getId() {
@@ -91,27 +91,26 @@ public class ejercicio {
 		this.tiempoEstimado = tiempoEstimado;
 	}
 
-	public docente getDocente() {
+	public Docente getDocente() {
 		return Docente;
 	}
 
-	public void setDocente(docente docente) {
+	public void setDocente(Docente docente) {
 		Docente = docente;
 	}
 
-	public leccion getLeccion() {
-		return leccion;
+	public Leccion getLeccion() {
+		return Leccion;
 	}
 
-	public void setLeccion(leccion leccion) {
-		this.leccion = leccion;
+	public void setLeccion(Leccion Leccion) {
+		this.Leccion = Leccion;
 	}
 
 	@Override
 	public String toString() {
-		return "ejercicio [id=" + id + ", tipo=" + tipo + ", anunciado=" + anunciado + ", solucion=" + solucion
+		return "Ejercicio [id=" + id + ", tipo=" + tipo + ", anunciado=" + anunciado + ", solucion=" + solucion
 				+ ", dificultad=" + dificultad + ", tiempoEstimado=" + tiempoEstimado + "]";
 	}
-	
-	
+
 }

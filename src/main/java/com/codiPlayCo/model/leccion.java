@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "lecciones")
-public class leccion {
+public class Leccion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -24,16 +24,16 @@ public class leccion {
 	private Date duracionEstimada;
 
 	@ManyToOne
-	private curso curso;
+	private Curso curso;
 	@ManyToOne
-	private docente docente;
+	private Docente Docente;
 
-	public leccion() {
+	public Leccion() {
 
 	}
 
-	public leccion(Integer id, String titulo, String descripcion, String orden, String contenido, String videoURL,
-			Date duracionEstimada, curso curso, docente docente) {
+	public Leccion(Integer id, String titulo, String descripcion, String orden, String contenido, String videoURL,
+			Date duracionEstimada, Curso curso, Docente Docente) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -43,7 +43,7 @@ public class leccion {
 		this.videoURL = videoURL;
 		this.duracionEstimada = duracionEstimada;
 		this.curso = curso;
-		this.docente = docente;
+		this.Docente = Docente;
 	}
 
 	public Integer getId() {
@@ -102,20 +102,20 @@ public class leccion {
 		this.duracionEstimada = duracionEstimada;
 	}
 
-	public curso getCurso() {
+	public Curso getCurso() {
 		return curso;
 	}
 
-	public void setCurso(curso curso) {
+	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
 
-	public docente getDocente() {
-		return docente;
+	public Docente getDocente() {
+		return Docente;
 	}
 
-	public void setDocente(docente docente) {
-		this.docente = docente;
+	public void setDocente(Docente Docente) {
+		this.Docente = Docente;
 	}
 
 	@Override
