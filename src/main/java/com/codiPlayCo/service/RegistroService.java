@@ -1,5 +1,5 @@
 package com.codiPlayCo.service;
 
-public class MiembrosGrupoService {
+public class RegistroService {
 
 }
